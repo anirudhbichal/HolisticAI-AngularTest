@@ -1,0 +1,24 @@
+<div class="container py-5">
+  <select class="form-select col-4" (change)="selectCustomer($event)">
+    <option *ngFor="let option of customernames" [selected]="option === ''">
+      {{ option }}
+    </option>
+  </select>
+
+  <table class="table table-striped">
+    <thead>
+      <th scope="col">Order Id</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Order Date</th>
+      <th scope="col">Product Name</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of orderDetailsData | filter:customerName">
+        <td>{{item.id}}</td>
+        <td>{{item.customer?.name}}</td>
+        <td>{{item.date | date:'dd/MM/yyyy'}}</td>
+        <td>{{item.product?.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

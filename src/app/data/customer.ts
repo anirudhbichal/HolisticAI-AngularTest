@@ -1,6 +1,6 @@
 export interface Customer {
-  id: number;
-  name: string;
+  id?: number;
+  name?: string;
 }
 
 export function createCustomerData(): Customer[] {

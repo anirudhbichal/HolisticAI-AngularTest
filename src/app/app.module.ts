@@ -5,13 +5,16 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppData } from './data/app-data';
 
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NameFilterPipe } from './namefilter.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NameFilterPipe],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(AppData),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
